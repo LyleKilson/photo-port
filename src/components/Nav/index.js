@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import { capitalizeFirstLetter } from "../../utils/helpers";
 
 function Nav() {
-  const categories = [
+  const [currentCategory, setCurrentCategory] = useState(categories[0]);
+  const [categories] = useState([
     {
       name: "commercial",
       description:
@@ -13,7 +15,7 @@ function Nav() {
       name: "landscape",
       description: "Fields, farmhouses, waterfalls, and the beauty of nature",
     },
-  ];
+  ]);
 
   function categorySelected(name) {
     console.log(`${name} clicked`);
